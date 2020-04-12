@@ -47,3 +47,14 @@ loadButton.addEventListener("click", function () {
         console.log("Got an error: ", error);
     });
 });
+
+getRealtimeUpdates = function() {
+    docRef.onSnapshot(function (doc) {
+        const myData = doc.data();
+        outputHeader.innerText = "Hot dog status: " + myData.hotDogStatus;
+    });
+
+    
+}
+
+getRealtimeUpdates();
